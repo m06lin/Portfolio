@@ -1,0 +1,216 @@
+﻿@using System.Web.Script.Serialization;
+@{Application.Controllers.CostController obj = new Application.Controllers.CostController();
+  string accountid = obj.AccountID();
+  int level = obj.AccountLevel();
+    }
+
+<script>
+    $(document).ready(function () {
+        AcName = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.AcName))');
+        JobType = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.JobType))');
+        RankType = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.RankType))');
+        SceneType = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.SceneType))');
+
+        $('#SearchSceneACName')
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: AcName,
+            index: 0,
+
+        });
+        $('#SearchSceneType')
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: RankType,
+            index: 0,
+
+        });
+        SearchAllScene();
+    });
+
+    function SearchAllScene() {
+        var AcID = $("#SearchSceneACName").val();
+        var Type = $("#SearchSceneType").val();
+        var dataSource = new kendo.data.DataSource({
+
+            //data: list,
+            transport: {
+                read: {
+                    url: "/Scene/SceneRead",
+                    dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                    data: { AcID: AcID, Type: Type }
+                }
+            },
+            batch: true,
+            editable: false,
+            pageable: {
+                refresh: true,
+                pageSizes: true
+            },
+            pageSize: 10,
+            schema: {
+                model: {
+                    id: "ID",
+                    fields: {
+                        ID: {
+                            type: 'number', editable: false, defaultValue: function () {
+                                return 0;
+                            }
+                        },
+                        Account_Id: {
+                            type: 'number', editable: false, defaultValue: function () {
+                                return 0;
+                            }
+                        },
+                        AccountName: {
+                            type: 'string'
+                        },
+                        Job_Level: {
+                            defaultValue: JobType[0]
+                        },
+                        Create_Date: { type: 'date' },
+                        Scene_Name: {
+                            defaultValue: SceneType[0]
+                        },
+                        Rank_Type: { defaultValue: RankType[0] },
+                        
+                        Note: {
+                            type: 'string',
+                            
+                        },
+                        
+
+                    }
+                }
+            }
+
+
+        });
+        $("#allSeceneGrid").kendoGrid({
+            dataSource: dataSource,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                change: function (e) { }
+            },
+            height: "600px",
+            pageSize: "10",
+            columns: [
+               
+                {
+                    field: "AccountName",
+                    width: 90,
+                    title: "記錄人"
+                },
+                {
+                    field: "Job_Level",
+                    width: 60,
+                    template: "#=Job_Level.Name#",
+                    title: "職位"
+                },
+                {
+                    field: "Create_Date",
+                    width: 100,
+                    title: "建立日期",
+                    format: "{0:MM/dd/yyyy}"
+                },
+                {
+                    width: 200,
+                    title: "景點名稱",
+                    template: "#=Scene_Name.Name#",
+                    field: "Scene_Name"
+                },
+                {
+                    width: 70,
+                    title: "評價星",
+                    //editor: RankTypeDropDownEditor,
+                    template: "#=Rank_Type.Name#",
+                    field: "Rank_Type"
+                },
+               
+                {
+                    width: 500,
+                    title: "附註",
+                    field: "Note"
+                },
+                //{
+                //    title: "門票",
+                //    width: 70,
+                //    field: "Spend"
+                //},
+                 { command: { text: "刪除", click: AllSceneDelete }, title: "", width: "90px" }
+            ],
+            dataBound: function () {
+                var gridtmp = this;
+                var model;
+                var level = '@level';
+                var accountid = '@accountid';
+                gridtmp.tbody.find("tr[role='row']").each(function () {
+                    model = gridtmp.dataItem(this);
+
+                    if (model.Job_Level.ID <= level && accountid != model.Account_Id) {
+
+                        $(this).find(".k-grid-刪除").remove();
+                    }
+                });
+            }
+        })
+
+        .data("kendoGrid");
+    }
+    function AllSceneDelete(e) {
+        var accountid = GetCookie("Account");
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    
+        if (confirm("確定要刪除該筆資料?") == true) {
+            var id = dataItem.ID;
+            var dataSource = $('#allSeceneGrid').data("kendoGrid").dataSource;
+            dataSource.remove(dataItem);
+            if (id == 0) {
+
+            }
+            else {
+                var json = JSON.stringify({ "ID": id, "accountid": accountid });
+                $.ajax({
+                    url: "/AllScene/SceneDelete",
+                    contentType: "application/json;charset=utf-8",
+                    data: json,
+                    type: 'Post',
+                    dataType: "Json",
+                    success: function (res) {
+                        if (res.isSuccess) {
+                            alert("刪除成功!!");
+                        } else {
+                            alert("刪除失敗!!\n錯誤訊息 : \n" + res.Msg);
+                        }
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+        else { }
+    }
+    function GetCookie(name) {
+        var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+        if (arr != null) return unescape(arr[2]); return null;
+    }
+</script>
+<table>
+    <tr>
+        <th>姓名:</th>
+        <td>
+        <input id="SearchSceneACName" />
+        </td>
+        <th>類型:</th>
+        <td>
+            <input id="SearchSceneType" />
+        </td>
+        <td>
+            <input type="button" value="查詢" class="btn btn-default" onclick="SearchAllScene()" />
+        </td>
+    </tr>
+</table>
+<div id="allSeceneGrid"></div>

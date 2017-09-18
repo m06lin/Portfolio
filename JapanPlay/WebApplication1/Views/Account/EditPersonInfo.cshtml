@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "EditPersonInfo";
+}
+@model WebApplication.Models.DBModels.Account
+<style type="text/css">
+    #Detail {
+        background-image: url(../Content/EditPersonInfo.jpg);
+        width: auto;
+        background-size: cover;
+    }
+
+    .table_detail {
+        vertical-align: middle;
+        font-size: 24px;
+        font-family: "微軟正黑體";
+        font-weight: bold;
+        width: 450px;
+    }
+
+    .main_detail {
+        background-color:rgba(255, 255, 255,0.6);
+        
+        
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -190px;
+        margin-top: -310px;
+        
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        var data = [
+            { text: "女", value: "1" },
+            { text: "男", value: "0" },
+            
+        ];
+    $("#Sex").kendoDropDownList({
+        dataTextField: "text",
+        dataValueField: "value",
+        dataSource: data,
+        index: 0
+    });
+    });
+    function save() {
+        if (confirm("確定要修改個人資料?") == true) {
+            var id = $("#ID").val() == null || $("#ID").val() == "" ? 0 : $("#ID").val();
+            var Name = $("#Name").val();
+            var Password = $("#password").val();
+            var Sex = $("#Sex").val();
+            var Interest = $("#Interest").val();
+            var Skill = $("#Skill").val();
+            var Introduction = $("#Introduction").val();
+            if (Name == null || Name == "")
+            {
+                alert("姓名不可為空!!");
+            }
+            else {
+                var json = JSON.stringify({ "ID": id, "Name": Name, "Password": Password, "Sex": Sex, "Interest": Interest, "Skill": Skill, "Introduction": Introduction, });
+                $.ajax({
+                    url: "/Account/EditPersonInfoUpdate",
+                    contentType: "application/json;charset=utf-8",
+                    data: json,
+                    type: 'Post',
+                    dataType: "Json",
+                    success: function (res) {
+                        if (res.isSuccess) {
+                            alert("修改成功!!");
+                            location.reload();
+                        } else {
+                            alert("修改失敗!!\n錯誤訊息 : \n" + res.Msg);
+                        }
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+        else { }
+    }
+</script>
+
+<body id="Detail">
+    
+    <div class="main_detail">
+        <table height="530" align="center" class="table_detail" style="margin-bottom: 10px;">
+            <tr><th colspan="2"><h2 align='center'>個人資料修改</h2></th></tr>
+            <tr>
+                <td><input id="ID" value="@Model.ID" hidden="hidden"></td>
+            </tr>
+            <tr align='center'>
+                <td width="112">帳號</td>
+                <td id="Account">@Model.AccountNum</td>
+            </tr>
+            <tr align='center'>
+                <td>*密碼</td>
+                <td><input type="password" id="password" style="text-align:center;" class="k-textbox" value="@Model.Password" /></td>
+            </tr>
+            <tr align='center'>
+                <td>*姓名</td>
+                <td><input type="text" id="Name" class="k-textbox" value="@Model.Name" /></td>
+            </tr>
+            <tr align='center'>
+                <td>*性別</td>
+                <td><input type="text" id="Sex" style="text-align:center; width:100px" value="@Model.Sex" /></td>
+            </tr>
+            <tr align='center'>
+                <td>*E-mail:</td>
+                <td id="email">@Model.Email</td>
+            </tr>
+            <tr align='center'>
+                <td>Phone:</td>
+                <td id="phone">@Model.Phone</td>
+            </tr>
+            <tr align='center'>
+                <td>興趣</td>
+                <td><input class="k-textbox" id="Interest" type="text" value="@Model.Interest" /></td>
+            </tr>
+            <tr align='center'>
+                <td>專長</td>
+                <td><input type="text" id="Skill" class="k-textbox" value="@Model.Skill" /></td>
+            </tr>
+            <tr align='center' style="vertical-align:text-top;">
+                <td>自我介紹</td>
+                <td><textarea id="Introduction" style="height:113px" class="k-textbox">@Model.Introduction</textarea></td>
+            </tr>
+            <tr><td colspan="2" style="text-align: center;"><input type="button" value="修改完成" id="Savebtn" class="k-button" onclick="save()" /><button type="button" class="k-button" onclick="location.href = '/JapanPlay/Index'">返回</button></td></tr>
+        </table>
+        
+    </div>
+</body>

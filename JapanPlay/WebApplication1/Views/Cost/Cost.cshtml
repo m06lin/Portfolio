@@ -1,0 +1,113 @@
+﻿@using System.Web.Script.Serialization;
+
+
+<script >
+    
+   
+
+    function CostTypeDropDownEditor(container, options) {
+
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.CostType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function AreaTypeDropDownEditor(container, options) {
+
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.AreaType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function CurrTypeDropDownEditor(container, options) {
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.CurrType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function personalcosttoolbarCmd() {
+
+        var dataSource = $('#personalcostgrid').data("kendoGrid").dataSource;//.data();
+        var rows = dataSource.data();
+        dataSource.insert(rows.length, {});
+    }
+    function Delete(e) {
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        if (confirm("確定要刪除該筆資料?") == true) {
+            var id = dataItem.ID;
+            var dataSource = $('#personalcostgrid').data("kendoGrid").dataSource;
+            dataSource.remove(dataItem);
+            if (id == 0)
+            {
+                
+            }
+            else {
+                //var json = JSON.stringify({ "ID": id });
+                //$.ajax({
+                //    url: "/Cost/CostDelete",
+                //    contentType: "application/json;charset=utf-8",
+                //    data: json,
+                //    type: 'Post',
+                //    dataType: "Json",
+                //    success: function (res) {
+                //        if (res.isSuccess) {
+                //            alert("刪除成功!!");
+                //        } else {
+                //            alert("刪除失敗!!\n錯誤訊息 : \n" + res.Msg);
+                //        }
+                //    },
+                //    complete: function () {
+                //    }
+                //});
+            }
+        }
+        else { }
+    }
+    function costbtnSave()
+    {
+        
+        var formData = new FormData();
+        var list = $('#personalcostgrid').data("kendoGrid").dataSource.data();
+        var grid = $('#personalcostgrid').data("kendoGrid").dataSource;
+      
+        formData.append("CostList", JSON.stringify(list));
+        $.ajax({
+            url: '@Url.Content("~/Cost/CostSave")',
+            contentType: false,
+            data: formData,
+            processData: false,
+            type: 'Post',
+            dataType: "Json",
+            success: function (res) {
+                if (res.isSuccess) {
+                    alert("儲存成功!!");
+                    CostSearch();
+                } else {
+                    alert("儲存失敗!!\n錯誤訊息 : \n" + res.Msg);
+                }
+            },
+            complete: function () {
+
+            }
+        });
+    }
+</script>
+

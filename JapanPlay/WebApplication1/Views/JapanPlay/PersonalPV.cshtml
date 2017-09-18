@@ -1,0 +1,50 @@
+﻿@*@(Html.Kendo().TabStrip()
+          .Name("tabstrip")
+          .Animation(animation =>
+              animation.Open(effect =>
+                  effect.Fade(FadeDirection.In)))
+          .Items(tabstrip =>
+          {
+              tabstrip.Add().Text("開銷花費")
+                  .Selected(true)
+                  .LoadContentFrom(Url.Content("~/Cost/Index"));
+
+
+              tabstrip.Add().Text("景點評價")
+                .LoadContentFrom(Url.Content("~/Scene/Index"));
+
+          })
+    )*@
+<div id="example">
+    <div class="wrapper">
+        <div id="tabstrippersonal">
+            <ul>
+                <li class="k-state-active">開銷花費</li>
+                <li>景點評價</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var ts = $("#tabstrippersonal").kendoTabStrip({
+            animation: {
+                 open: { effects: "fadeIn" }
+            },
+            select: onSelect,
+            contentUrls: [
+                        '../Cost/Index',
+                        '../Scene/Index'
+                       
+                    ]
+        }).data('kendoTabStrip');
+
+    });
+    function onSelect(e) {
+        //clear the current content of the tab before it's displayed to force the tabStrip to load it
+        $(e.contentElement).html("");
+    }
+    
+</script>

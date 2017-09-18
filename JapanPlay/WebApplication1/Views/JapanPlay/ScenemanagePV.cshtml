@@ -1,0 +1,137 @@
+﻿
+@using System.Web.Script.Serialization;
+<script type="text/x-kendo-template" id="sceneManagebarTemplate">
+    <!--<div class="toolbar">-->
+    <div>
+        <div style="float:left;">
+            <input type="button" class="btn btn-default" value="新增" onclick="scenemanagetoolbarCmd();" />
+        </div>
+        <div style="float:right;">
+            <input type="button" class="btn btn-info" onclick="sceneManagebtnSave()" value="儲存" />
+        </div>
+    </div>
+</script>
+<script>
+    var Area ;
+    $(document).ready(function () {
+        Area = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.Area))');
+        console.log(Area);
+        var dataSource = new kendo.data.DataSource({
+            //data: list,
+            transport: {
+                read: {
+                    url: "/JapanPlay/ScenemanageRead",
+                    dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                }
+            },
+            batch: true,
+            editable: "incell",
+
+            schema: {
+                model: {
+                    id: "ID",
+                    fields: {
+                        ID: {
+                            type: 'number', editable: false, defaultValue: function () {
+                                return 0;
+                            }
+                        },
+                        Area: {
+                            defaultValue: Area[0]
+                        },
+
+                        Scenename: {
+                            type: 'string',
+                            validation: {
+                                required: true,
+                                Titlevalidation: function (input) {
+                                    if (input.is("[name='Scene_Name']")) {
+                                        if ($.trim(input.val()) == '') {
+                                            input.attr("data-Titlevalidation-msg", "不可為空");
+                                            return input.val();
+                                        }
+                                    }
+                                    return true;
+                                }
+                            }
+                        },
+                    }
+                }
+            }
+        });
+        
+        $("#manageGrid").kendoGrid({
+            dataSource: dataSource,
+            editable: "incell",
+            pageable: {
+                refresh: true,
+                pageSizes: true
+            },
+            height: "600px",
+            pageSize: "10",
+            toolbar:
+             kendo.template($("#sceneManagebarTemplate").html()),
+            columns: [
+
+                { width: 100, title: "地區", editor: AreaDropDownEditor, template: "#=Area.Name#", field: "Area" },
+                { width: 300, title: "景點名稱", field: "Scene_Name" },
+            ],
+            
+        }).data("kendoGrid");
+
+    });
+   
+    function GetCookie(name) {
+        var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+        if (arr != null) return unescape(arr[2]); return null;
+    }
+    function sceneManagebtnSave() {
+
+        var formData = new FormData();
+        var list = $('#manageGrid').data("kendoGrid").dataSource.data();
+        var grid = $('#manageGrid').data("kendoGrid").dataSource;
+        formData.append("sceneManageList", JSON.stringify(list));
+        console.log(list);
+        $.ajax({
+            url: '@Url.Content("~/JapanPlay/SceneManageSave")',
+            contentType: false,
+            data: formData,
+            processData: false,
+            type: 'Post',
+            dataType: "Json",
+            success: function (res) {
+                if (res.isSuccess) {
+                    alert("儲存成功!!");
+                    grid.read();
+                } else {
+                    alert("儲存失敗!!\n錯誤訊息 : \n" + res.Msg);
+                }
+            },
+            complete: function () {
+
+            }
+        });
+    }
+    function scenemanagetoolbarCmd() {
+
+        var dataSource = $('#manageGrid').data("kendoGrid").dataSource;//.data();
+        var rows = dataSource.data();
+        dataSource.insert(rows.length, {});
+    }
+    function AreaDropDownEditor(container, options) {
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.Area))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+
+
+</script>
+
+<div id="manageGrid"></div>

@@ -1,0 +1,97 @@
+﻿@using System.Web.Script.Serialization;
+
+<script >
+    
+    function RankTypeDropDownEditor(container, options) {
+
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.RankType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function SceneTypeDropDownEditor(container, options) {
+
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.SceneType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function toolbarCmd() {
+
+        var dataSource = $('#personalSceneGrid').data("kendoGrid").dataSource;//.data();
+        var rows = dataSource.data();
+        dataSource.insert(rows.length, {});
+    }
+    function Delete(e) {
+        e.preventDefault();
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        if (confirm("確定要刪除該筆資料?") == true) {
+            var id = dataItem.ID;
+            var dataSource = $('#personalSceneGrid').data("kendoGrid").dataSource;
+            dataSource.remove(dataItem);
+            if (id == 0)
+            {
+                
+            }
+            else {
+                //var json = JSON.stringify({ "ID": id });
+                //$.ajax({
+                //    url: "/Cost/CostDelete",
+                //    contentType: "application/json;charset=utf-8",
+                //    data: json,
+                //    type: 'Post',
+                //    dataType: "Json",
+                //    success: function (res) {
+                //        if (res.isSuccess) {
+                //            alert("刪除成功!!");
+                //        } else {
+                //            alert("刪除失敗!!\n錯誤訊息 : \n" + res.Msg);
+                //        }
+                //    },
+                //    complete: function () {
+                //    }
+                //});
+            }
+        }
+        else { }
+    }
+    function scenebtnSave()
+    {
+        
+        var formData = new FormData();
+        var list = $('#personalSceneGrid').data("kendoGrid").dataSource.data();
+      
+        formData.append("SceneList", JSON.stringify(list));
+        $.ajax({
+            url: '@Url.Content("~/Scene/SceneSave")',
+            contentType: false,
+            data: formData,
+            processData: false,
+            type: 'Post',
+            dataType: "Json",
+            success: function (res) {
+                if (res.isSuccess) {
+                    alert("儲存成功!!");
+                    SearchScene();
+                } else {
+                    alert("儲存失敗!!\n錯誤訊息 : \n" + res.Msg);
+                }
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+

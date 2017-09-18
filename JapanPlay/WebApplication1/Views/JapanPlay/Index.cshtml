@@ -1,0 +1,62 @@
+﻿@{
+    Application.Controllers.CostController obj = new Application.Controllers.CostController();
+    int level = obj.AccountLevel();
+    string acname = obj.AccountName();
+    string jobname = obj.JobName();
+    string hello = "Hi~" + acname + "" + jobname + " 歡迎來到日本Play!";
+}
+<div style="text-align:right;background-image:url(../Content/title1.jpg);background-repeat:repeat-x;">
+    
+    <h2 style="text-align:center;color:aliceblue">@hello</h2>
+    <input type="button" class="k-button" value="帳戶修改" onclick="location.href = '/Account/EditPersonInfo'" >
+    <a href="/Account/Logout"><button type="button" class="k-button">登出</button></a>
+
+</div>
+
+<div style="float:left;width:10%">
+    <input id="personalBtn" style="width:100%;height:30%" type="button" class="k-button" value="個人" onclick="Personal()">
+    <input id="allGutsBtn" style="width:100%;height:30%" type="button" class="k-button" value="所有人" onclick="AllGuts()">
+@{if(level<2){
+    @:<input id="jobManageBtn" style="width:100%;height:30%" type="button" class="k-button" value="職位管理" onclick="Jobmanage()">
+    @:<input id="sceneManageBtn" style="width:100%;height:30%" type="button" class="k-button" value="景點管理" onclick="Scenemange()">
+}}
+</div>
+<div id="partailDiv" style="float:right;width:90%">
+    
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        Personal();
+    })
+
+    function Personal() {
+        $("#personalBtn").css("background-color", "#99FFCC");
+        $("#allGutsBtn").css("background-color", "");
+        $("#jobManageBtn").css("background-color", "");
+        $("#sceneManageBtn").css("background-color", "");
+        $("#partailDiv").load("../JapanPlay/PersonalPV");
+    }
+    function AllGuts() {
+        $("#allGutsBtn").css("background-color", "#99FFCC");
+        $("#personalBtn").css("background-color", "");
+        $("#jobManageBtn").css("background-color", "");
+        $("#sceneManageBtn").css("background-color", "");
+        $("#partailDiv").load("../JapanPlay/AllGutsPV");
+    }
+    function Jobmanage() {
+        $("#jobManageBtn").css("background-color", "#99FFCC");
+        $("#personalBtn").css("background-color", "");
+        $("#allGutsBtn").css("background-color", "");
+        $("#sceneManageBtn").css("background-color", "");
+        $("#partailDiv").load("../JapanPlay/Jobmanage");
+    }
+    function Scenemange() {
+        $("#sceneManageBtn").css("background-color", "#99FFCC");
+        $("#jobManageBtn").css("background-color", "");
+        $("#personalBtn").css("background-color", "");
+        $("#allGutsBtn").css("background-color", "");
+        $("#partailDiv").load("../JapanPlay/ScenemanagePV");
+    }
+</script>

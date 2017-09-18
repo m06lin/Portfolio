@@ -1,0 +1,144 @@
+﻿@using System.Web.Script.Serialization;
+<script type="text/x-kendo-template" id="JobtbarTemplate">
+    <!--<div class="toolbar">-->
+    <div >
+        <div style="float:left;">
+            <input type="button" class="btn btn-default" value="新增" onclick="jobtoolbarCmd();" />
+        </div>
+        <div style="float:right;">
+            <input type="button" class="btn btn-info" onclick="jobbtnSave()" value="儲存" />
+        </div>
+    </div>    
+</script>
+<script>
+    var JobLevel = [];
+    $(document).ready(function () {
+        
+        JobLevel = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.JobLevel))');
+     
+        var dataSource = new kendo.data.DataSource({
+            //data: list,
+            transport: {
+                read: {
+                    url: "/Job/JobRead",
+                    dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                }
+            },
+            batch: true,
+            editable: "incell",
+
+            schema: {
+                model: {
+                    id: "ID",
+                    fields: {
+                        ID: {
+                            type: 'number', editable: false, defaultValue: function () {
+                                return 0;
+                            }
+                        },
+                        Joblevel: {
+                            defaultValue: JobLevel[0]
+                        },
+
+                        Jobname: {
+                            type: 'string',
+                            validation: {
+                                required: true,
+                                Titlevalidation: function (input) {
+                                    if (input.is("[name='Cost_Name']")) {
+                                        if ($.trim(input.val()) == '') {
+                                            input.attr("data-Titlevalidation-msg", "不可為空");
+                                            return input.val();
+                                        }
+                                    }
+                                    return true;
+                                }
+                            }
+                        },
+                    }
+                }
+            }
+        });
+        $("#jobgrid").kendoGrid({
+            dataSource: dataSource,
+            editable: "incell",
+            pageable: {
+                refresh: true,
+                pageSizes: true
+            },
+            height: "600px",
+            pageSize: "10",
+            toolbar:
+             kendo.template($("#JobtbarTemplate").html()),
+            columns: [
+               
+                { width: 100, title: "職位權限", editor: JobTypeDropDownEditor, template: "#=Joblevel.Name#", field: "Joblevel" },
+                { width: 300, title: "職位稱號", field: "Jobname" },
+            ],
+            edit: function (e) {
+                if (!isEditable(e.model)) {
+                     this.closeCell(); // prevent editing
+                }
+            }
+        }).data("kendoGrid");
+      
+    });
+    function isEditable(model) {
+        if (model.ID == 9 || model.ID == 1)
+            return false;
+        else
+            return true;
+    }
+    function GetCookie(name) {
+        var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+        if(arr != null) return unescape(arr[2]); return null;
+    }
+    function jobbtnSave() {
+        
+        var formData = new FormData();
+        var list = $('#jobgrid').data("kendoGrid").dataSource.data();
+        var grid = $('#jobgrid').data("kendoGrid").dataSource;
+        formData.append("JobList", JSON.stringify(list));
+        $.ajax({
+            url: '@Url.Content("~/Job/JobSave")',
+            contentType: false,
+            data: formData,
+            processData: false,
+            type: 'Post',
+            dataType: "Json",
+            success: function (res) {
+                if (res.isSuccess) {
+                    alert("儲存成功!!");
+                    grid.read();
+                } else {
+                    alert("儲存失敗!!\n錯誤訊息 : \n" + res.Msg);
+                }
+            },
+            complete: function () {
+
+            }
+        });
+    }
+    function jobtoolbarCmd() {
+
+        var dataSource = $('#jobgrid').data("kendoGrid").dataSource;//.data();
+        var rows = dataSource.data();
+        dataSource.insert(rows.length, {});
+    }
+    function JobTypeDropDownEditor(container, options) {
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.JobLevel))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function ACPowerSearch() { }
+    
+</script>
+
+<div id="jobgrid"></div>

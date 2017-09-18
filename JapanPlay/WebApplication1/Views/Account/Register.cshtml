@@ -1,0 +1,128 @@
+﻿<style type="text/css">
+    #Detail {
+        background-image: url(../Content/refister.jpg);
+        width: auto;
+        background-size: cover;
+    }
+
+    .table_detail {
+        background-color:rgba(255, 255, 255,0.6);
+        vertical-align: middle;
+        font-size: 24px;
+        font-family: "微軟正黑體";
+        font-weight: bold;
+        width: 400px;
+    }
+
+    .main_detail {
+        width: 400px;
+        height: 800 px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -190px;
+        margin-top: -310px;
+        margin-bottom: 10px;
+    }
+
+    .inputstyle {
+        font-size: 24px;
+        height: auto;
+        size: auto;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        var data = [
+            { text: "女", value: "1" },
+            { text: "男", value: "0" },
+
+        ];
+        $("#registerSex").kendoDropDownList({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: data,
+            index: 0
+        });
+
+
+    });
+    function Register() {
+        var registerAC = $("#registerAC").val();
+        var registerPW = $("#registerPW").val();
+        var registerEM = $("#registerEM").val();
+        var registerName = $("#registerName").val();
+        var registerSex = $("#registerSex").val();
+        var registerPhone = $("#registerPhone").val();
+        var json = JSON.stringify({ "registerAC": registerAC, "registerPW": registerPW, "registerEM": registerEM, "registerName": registerName, "registerSex": registerSex, "registerPhone": registerPhone });
+        $.ajax({
+            url: "/Account/Register",
+            contentType: "application/json;charset=utf-8",
+            data: json,
+            type: 'Post',
+            dataType: "Json",
+            success: function (res) {
+                if (res.isSuccess) {
+                    alert("註冊成功!!");
+                    document.location.href = "/Account/Login";
+                } else {
+                    alert("註冊失敗!!\n錯誤訊息 : \n" + res.Msg);
+                }
+            },
+            complete: function () {
+            }
+        });
+
+    }
+</script>
+<body id="Detail">
+
+    <div class="main_detail">
+        
+        <table height="400" align="center" class="table_detail">
+            <tr>
+                <th width="100" colspan="2"><h1 align="center">註冊</h1></th>
+               
+            </tr>
+            <tr>
+                <th width="100">帳號:</th>
+                <td width="288"><input id="registerAC" type="text" required class="inputstyle" /></td>
+            </tr>
+
+            <tr>
+                <th>密碼:</th>
+                <td><input id="registerPW" type="password" required class="inputstyle" /></td>
+            </tr>
+
+            <tr>
+                <th>Email:</th>
+                <td><input id="registerEM" type="text" required class="inputstyle" /></td>
+            </tr>
+
+            <tr>
+                <th>姓名:</th>
+                <td><input id="registerName" type="text" required class="inputstyle" /></td>
+            </tr>
+
+            <tr>
+                <th>姓別:</th>
+                <td><input id="registerSex" style="text-align:center; width:100px" class="inputstyle" /></td>
+            </tr>
+
+            <tr>
+                <th>電話:</th>
+                <td><input id="registerPhone" type="text" required class="inputstyle" /></td>
+            </tr>
+
+            <tr align="center">
+                <td><input type="button" onclick="Register()" class="k-button" value="註冊" /></td>
+                <td>
+                    <a href="/Account/Login"><button type="button" class="k-button">返回登入頁</button></a>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+</body>

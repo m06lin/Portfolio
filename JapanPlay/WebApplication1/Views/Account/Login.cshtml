@@ -1,0 +1,129 @@
+﻿
+<style type="text/css">
+    .Login_Block {
+       
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        font-size: 36px;
+        background-color: #9F0;
+        background-image: url(../Content/20160329_165252_001.jpg);
+        width: auto;
+        background-size: cover;
+    }
+
+    .Button_log {
+        font-size: 36px;
+        border-top-width: medium;
+        bottom: 10%;
+        margin-top: 50%;
+    }
+
+    .main {
+
+        font-size: 24px;
+        background: rgba(100%,100%,100%,0.4);
+        width: 40%;
+        height: 80%;
+        margin: 0px auto;
+        margin-top: 7%;
+        /*background-image: url(../Content/brain-155188_1280.png);*/
+        background-repeat: repeat;
+    }
+
+    .forget {
+        font-size: 12px;
+    }
+
+    .lable1 {
+        top: 40%;
+        left: 35%;
+        font-size: 50px;
+        position: absolute;
+    }
+
+    .lable2 {
+        top: 45%;
+        left: 35%;
+        margin-top: 100px;
+        font-size: 50px;
+        position: absolute;
+    }
+
+    .input_a {
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        position: absolute;
+        top: 43%;
+        left: 45%;
+        height: 6%;
+        width: 30%;
+        font-size: 32px;
+    }
+
+    .input_p {
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        position: absolute;
+        margin-top: 120px;
+        left: 45%;
+        height: 6%;
+        width: 30%;
+        font-size: 32px;
+        top: 45%;
+    }
+
+    .p {
+        padding-top: 20px;
+        font-family: "微軟正黑體";
+        font-size: 60px;
+        font-style: normal;
+        text-decoration: blink;
+        font-variant: normal;
+        text-transform: none;
+    }
+</style>
+<script>
+    function Login() {
+        var account = $("#Account").val();
+        var password = $("#Password").val();
+        var json = JSON.stringify({ "account": account, "password": password });
+        $.ajax({
+            url: "/Account/Login",
+            contentType: "application/json;charset=utf-8",
+            data: json,
+            type: 'Post',
+            dataType: "Json",
+            success: function (res) {
+                if (res.isSuccess) {
+                   // alert("登入成功!!");
+                    document.location.href = "/Account/Index";
+                } else {
+                    alert("登入失敗!!\n錯誤訊息 : \n" + res.Msg);
+                }
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+
+
+<body class="Login_Block">
+    <div class="main" id="Main" align="center">
+        <p align="center" class="p">該登入囉</p>
+
+        <label class="lable1">帳號:</label>
+        <input name="Account" id="Account" type="text" class="input_a" />
+        <label class="lable2">密碼:</label>
+        <input name="Password" id="Password" type="password" class="input_p" />
+
+        <button type="button" class="Button_log" onclick="Login()">登入</button>
+        <button type="button" class="Button_log" onclick="location.href = '/Account/Index'">註冊</button>
+        <p></p>
+        <button type="button" class="forget" onclick="location.href = '/Account/ForgetPassWord'">忘記密碼</button>
+    </div>
+
+</body>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Scripts/kendoui/styles/kendo.default.min.css")
+    @Styles.Render("~/Scripts/kendoui/styles/kendo.common.min.css")    
+    @Styles.Render("~/Scripts/kendoui/styles/kendo.common-bootstrap.min.css")
+    @Styles.Render("~/Scripts/kendoui/styles/kendo.bootstrap.min.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @*<script src="/Scripts/jquery-migrate-1.1.1.js"></script>
+    @Scripts.Render("~/bundles/jqueryui")*@
+   @RenderBody()
+    @*kendoui*@
+    @Scripts.Render("~/Scripts/kendoui/kendo.all.min.js")
+    @Scripts.Render("~/Scripts/kendoui/kendo.aspnetmvc.min.js")
+    @Scripts.Render("~/Scripts/kendoui/kendo.timezones.min.js")
+    @Scripts.Render("~/Scripts/kendoui/kendo.angular.min.js")
+    @Scripts.Render("~/Scripts/kendoui/kendo.web.min.js")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

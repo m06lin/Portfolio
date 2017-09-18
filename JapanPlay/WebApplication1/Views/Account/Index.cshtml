@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index";
+    
+    Application.Controllers.CostController obj = new Application.Controllers.CostController();
+    string acid = obj.AccountID();
+    
+}
+<script>
+     
+
+     
+</script>
+
+@*<a href="~/Account/EditPersonInfo">個人管理</a>*@
+
+@{if (acid == "") {
+            
+     @Html.Action("Register", "Account");
+  }
+    
+  else
+  {
+   
+    @Html.Action("Index", "JapanPlay");
+  }
+}

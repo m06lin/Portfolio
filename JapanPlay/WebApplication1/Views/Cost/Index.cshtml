@@ -1,0 +1,258 @@
+﻿@using System.Web.Script.Serialization;
+<script type="text/x-kendo-template" id="costtbarTemplate">
+    <!--<div class="toolbar">-->
+    <div >
+        <div style="float:left;">
+            <input type="button" class="btn btn-default" value="新增" onclick="personalcosttoolbarCmd();" />
+        </div>
+        <div style="float:right;">
+            <input type="button" class="btn btn-info" onclick="costbtnSave()" value="儲存" />
+        </div>
+    </div>    
+</script>
+<script>
+    var CostType = [];
+    var AreaType = [];
+    var CurrType = [];
+    $(document).ready(function () {
+        //  @*  var list = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(Model))');*@
+        //@*  AcName = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.AcName))');*@
+        CostType = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.CostType))');
+        AreaType = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.AreaType))');
+        CurrType = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.CurrType))');
+        //$('#SearchACName')
+        //.kendoDropDownList({
+        //    dataTextField: "Name",
+        //    dataValueField: "ID",
+        //    dataSource: AcName,
+        //    index: 0,
+
+        //});
+        $('#SearchCostType')
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: CostType,
+            index: 0,
+
+        });
+        CostSearch();
+    });
+    function Delete(e) {
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        var id = dataItem.ID;
+        var dataSource = $('#personalcostgrid').data("kendoGrid").dataSource;
+        dataSource.remove(dataItem);
+       
+    }
+    function CostSearch() {
+        var AcID = GetCookie("Account");
+        var Type = $("#SearchCostType").val();
+        var dataSource = new kendo.data.DataSource({
+
+            //data: list,
+            transport: {
+                read: {
+                    url: "/Cost/CostRead",
+                    dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                    data: { AcID: AcID, Type: Type }
+                }
+            },
+            batch: true,
+            editable: "incell",
+
+            schema: {
+                model: {
+                    id: "ID",
+                    fields: {
+                        ID: {
+                            type: 'number', editable: false, defaultValue: function () {
+                                return 0;
+                            }
+                        },
+                        Account_Id: {
+                            type: 'number', editable: false, defaultValue: function () {
+                                return AcID;
+                            }
+                        },
+                        Cost_Date: {
+                            type: 'date',
+
+                            validation: {
+                                required: true,
+                                Titlevalidation: function (input) {
+                                    if (input.is("[name='Cost_Name']")) {
+                                        if ($.trim(input.val()) == '') {
+                                            input.attr("data-Titlevalidation-msg", "不可為空");
+                                            return input.val();
+                                        }
+                                    }
+
+                                    return true;
+                                }
+                            }
+                        },
+                        Cost_Name: {
+                            type: 'string',
+                            validation: {
+                                required: true,
+                                Titlevalidation: function (input) {
+                                    if (input.is("[name='Cost_Name']")) {
+                                        if ($.trim(input.val()) == '') {
+                                            input.attr("data-Titlevalidation-msg", "不可為空");
+                                            return input.val();
+                                        }
+                                    }
+
+                                    return true;
+                                }
+                            }
+                        },
+                        Cost_Type: { defaultValue: CostType[0] },
+                        Area: {
+                            defaultValue: AreaType[0]
+                        },
+                        Note: {
+                            type: 'string',
+
+                        },
+                        Spend: {
+                            type: 'string',
+                            validation: {
+                                required: true,
+                                Titlevalidation: function (input) {
+                                    if (input.is("[name='Spend']")) {
+                                        if ($.trim(input.val()) == '') {
+                                            input.attr("data-Titlevalidation-msg", "不可為空");
+                                            return input.val();
+                                        }
+                                    }
+
+                                    return true;
+                                }
+                            }
+                        },
+                        Currency: { defaultValue: CurrType[0] },
+
+                    }
+                }
+            }
+
+
+        });
+        $("#personalcostgrid").kendoGrid({
+            dataSource: dataSource,
+            editable: "incell",
+            pageable: {
+                refresh: true,
+                pageSizes: true
+            },
+            height :"600px",
+            pageSize: "10",
+            toolbar:
+             kendo.template($("#costtbarTemplate").html()),
+            columns: [
+
+                { field: "Cost_Date", width: 100, title: "消費日期", format: "{0:MM/dd/yyyy}", },
+                {width: 200, title: "花費名稱", field: "Cost_Name" },
+                {width: 100, title: "花費類型", editor: CostTypeDropDownEditor,template: "#=Cost_Type.Name#",field: "Cost_Type"},
+                {width: 100, field: "Area",editor: AreaTypeDropDownEditor, template: "#=Area.Name#", title: "地區",},
+                {width: 300, title: "附註",field: "Note" },
+                { title: "花費", width: 70, field: "Spend" },
+                { title: "貨幣", width: 90, editor: CurrTypeDropDownEditor, template: "#=Currency.Name#", field: "Currency" },
+                { command: { text: "刪除", click: Delete }, title: " ", width: "90px" }
+            ]
+        }).data("kendoGrid");
+    }
+    function GetCookie(name) {
+        var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+        if(arr != null) return unescape(arr[2]); return null;
+    }
+    function CostTypeDropDownEditor(container, options) {
+
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.CostType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function AreaTypeDropDownEditor(container, options) {
+
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.AreaType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function CurrTypeDropDownEditor(container, options) {
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.CurrType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function personalcosttoolbarCmd() {
+
+        var dataSource = $('#personalcostgrid').data("kendoGrid").dataSource;//.data();
+        var rows = dataSource.data();
+        dataSource.insert(rows.length, {});
+    }
+    function costbtnSave() {
+
+        var formData = new FormData();
+        var list = $('#personalcostgrid').data("kendoGrid").dataSource.data();
+        var grid = $('#personalcostgrid').data("kendoGrid").dataSource;
+
+        formData.append("CostList", JSON.stringify(list));
+        $.ajax({
+            url: '@Url.Content("~/Cost/CostSave")',
+            contentType: false,
+            data: formData,
+            processData: false,
+            type: 'Post',
+            dataType: "Json",
+            success: function (res) {
+                if (res.isSuccess) {
+                    alert("儲存成功!!");
+                    CostSearch();
+                } else {
+                    alert("儲存失敗!!\n錯誤訊息 : \n" + res.Msg);
+                }
+            },
+            complete: function () {
+
+            }
+        });
+    }
+</script>
+<table>
+    <tr>
+      @*  <th>姓名:</th>
+        <td>
+        <input id="SearchCostACName" />
+        </td>*@
+        <th>類型:</th>
+        <td>
+            <input id="SearchCostType" />
+        </td>
+        <td>
+            <input type="button" value="查詢" class="btn btn-default" onclick="CostSearch()" />
+        </td>
+    </tr>
+</table>
+<div id="personalcostgrid"></div>

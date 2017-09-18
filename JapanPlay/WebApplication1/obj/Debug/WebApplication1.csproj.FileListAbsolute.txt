@@ -1,0 +1,286 @@
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Antlr3.Runtime.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Dynamic.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\KendoGridBinder.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Helpers.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Mvc.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Optimization.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Razor.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\WebGrease.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Helpers.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Mvc.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Optimization.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Razor.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Antlr3.Runtime.pdb
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\401411631\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\練習\WebApplication1\WebApplication1\bin\WebApplication1.dll
+D:\練習\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+D:\練習\WebApplication1\WebApplication1\bin\Antlr3.Runtime.dll
+D:\練習\WebApplication1\WebApplication1\bin\Dynamic.dll
+D:\練習\WebApplication1\WebApplication1\bin\EntityFramework.dll
+D:\練習\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+D:\練習\WebApplication1\WebApplication1\bin\KendoGridBinder.dll
+D:\練習\WebApplication1\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+D:\練習\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.Helpers.dll
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.Mvc.dll
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.Optimization.dll
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.Razor.dll
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.WebPages.dll
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.dll
+D:\練習\WebApplication1\WebApplication1\bin\WebGrease.dll
+D:\練習\WebApplication1\WebApplication1\bin\EntityFramework.xml
+D:\練習\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.Helpers.xml
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.Mvc.xml
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.Optimization.xml
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.Razor.xml
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.WebPages.xml
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+D:\練習\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.xml
+D:\練習\WebApplication1\WebApplication1\bin\Antlr3.Runtime.pdb
+D:\練習\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+D:\練習\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.resources.dll
+D:\練習\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\練習\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Helpers.resources.dll
+D:\練習\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Mvc.resources.dll
+D:\練習\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Optimization.resources.dll
+D:\練習\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Razor.resources.dll
+D:\練習\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.resources.dll
+D:\練習\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+D:\練習\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+D:\練習\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+D:\練習\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+D:\練習\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\Antlr3.Runtime.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\Dynamic.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\KendoGridBinder.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.Helpers.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.Mvc.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.Optimization.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.Razor.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.WebPages.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\WebGrease.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.Helpers.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.Mvc.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.Optimization.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.Razor.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.WebPages.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\Antlr3.Runtime.pdb
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\401410971\DOWNLOADS\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Antlr3.Runtime.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Dynamic.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\KendoGridBinder.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Helpers.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Mvc.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Optimization.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Razor.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\WebGrease.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Helpers.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Mvc.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Optimization.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.Razor.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Antlr3.Runtime.pdb
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\401410971\Documents\Visual Studio 2013\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\Antlr3.Runtime.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\Dynamic.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\KendoGridBinder.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.Helpers.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.Mvc.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.Optimization.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.Razor.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\WebGrease.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.Helpers.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.Mvc.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.Optimization.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.Razor.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\Antlr3.Runtime.pdb
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\USER\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+E:\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+E:\WebApplication1\WebApplication1\bin\WebApplication1.dll
+E:\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+E:\WebApplication1\WebApplication1\bin\Antlr3.Runtime.dll
+E:\WebApplication1\WebApplication1\bin\Dynamic.dll
+E:\WebApplication1\WebApplication1\bin\EntityFramework.dll
+E:\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+E:\WebApplication1\WebApplication1\bin\KendoGridBinder.dll
+E:\WebApplication1\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+E:\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+E:\WebApplication1\WebApplication1\bin\System.Web.Helpers.dll
+E:\WebApplication1\WebApplication1\bin\System.Web.Mvc.dll
+E:\WebApplication1\WebApplication1\bin\System.Web.Optimization.dll
+E:\WebApplication1\WebApplication1\bin\System.Web.Razor.dll
+E:\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+E:\WebApplication1\WebApplication1\bin\System.Web.WebPages.dll
+E:\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.dll
+E:\WebApplication1\WebApplication1\bin\WebGrease.dll
+E:\WebApplication1\WebApplication1\bin\EntityFramework.xml
+E:\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+E:\WebApplication1\WebApplication1\bin\System.Web.Helpers.xml
+E:\WebApplication1\WebApplication1\bin\System.Web.Mvc.xml
+E:\WebApplication1\WebApplication1\bin\System.Web.Optimization.xml
+E:\WebApplication1\WebApplication1\bin\System.Web.Razor.xml
+E:\WebApplication1\WebApplication1\bin\System.Web.WebPages.xml
+E:\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+E:\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.xml
+E:\WebApplication1\WebApplication1\bin\Antlr3.Runtime.pdb
+E:\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+E:\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.resources.dll
+E:\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+E:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Helpers.resources.dll
+E:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Mvc.resources.dll
+E:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Optimization.resources.dll
+E:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Razor.resources.dll
+E:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.resources.dll
+E:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+E:\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+E:\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+D:\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+D:\WebApplication1\WebApplication1\bin\WebApplication1.dll
+D:\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+D:\WebApplication1\WebApplication1\bin\Antlr3.Runtime.dll
+D:\WebApplication1\WebApplication1\bin\Dynamic.dll
+D:\WebApplication1\WebApplication1\bin\EntityFramework.dll
+D:\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+D:\WebApplication1\WebApplication1\bin\KendoGridBinder.dll
+D:\WebApplication1\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+D:\WebApplication1\WebApplication1\bin\Newtonsoft.Json.dll
+D:\WebApplication1\WebApplication1\bin\System.Web.Helpers.dll
+D:\WebApplication1\WebApplication1\bin\System.Web.Mvc.dll
+D:\WebApplication1\WebApplication1\bin\System.Web.Optimization.dll
+D:\WebApplication1\WebApplication1\bin\System.Web.Razor.dll
+D:\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+D:\WebApplication1\WebApplication1\bin\System.Web.WebPages.dll
+D:\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.dll
+D:\WebApplication1\WebApplication1\bin\WebGrease.dll
+D:\WebApplication1\WebApplication1\bin\EntityFramework.xml
+D:\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
+D:\WebApplication1\WebApplication1\bin\System.Web.Helpers.xml
+D:\WebApplication1\WebApplication1\bin\System.Web.Mvc.xml
+D:\WebApplication1\WebApplication1\bin\System.Web.Optimization.xml
+D:\WebApplication1\WebApplication1\bin\System.Web.Razor.xml
+D:\WebApplication1\WebApplication1\bin\System.Web.WebPages.xml
+D:\WebApplication1\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+D:\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.xml
+D:\WebApplication1\WebApplication1\bin\Antlr3.Runtime.pdb
+D:\WebApplication1\WebApplication1\bin\Newtonsoft.Json.xml
+D:\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.resources.dll
+D:\WebApplication1\WebApplication1\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Helpers.resources.dll
+D:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Mvc.resources.dll
+D:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Optimization.resources.dll
+D:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.Razor.resources.dll
+D:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.resources.dll
+D:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+D:\WebApplication1\WebApplication1\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+D:\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+D:\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+D:\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

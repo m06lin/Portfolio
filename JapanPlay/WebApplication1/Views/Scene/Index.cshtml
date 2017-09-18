@@ -1,0 +1,197 @@
+﻿@using System.Web.Script.Serialization;
+<script type="text/x-kendo-template" id="ScenetbarTemplate">
+    <!--<div class="toolbar">-->
+    <div >
+        <div style="float:left;">
+            <input type="button" class="btn btn-default" value="新增" onclick="toolbarCmd();" />
+        </div>
+        <div style="float:right;">
+            <input type="button" class="btn btn-info" onclick="scenebtnSave()" value="儲存" />
+        </div>
+    </div>    
+</script>
+<script>
+    var RankType = [];
+    var SceneType = [];
+    $(document).ready(function () {
+        //@*  var list = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(Model))');*@
+        //@*  AcName = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.AcName))');*@
+        RankType = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.RankType))');
+        SceneType = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.SceneType))');
+        //$('#SearchACName')
+        //.kendoDropDownList({
+        //    dataTextField: "Name",
+        //    dataValueField: "ID",
+        //    dataSource: AcName,
+        //    index: 0,
+
+        //});
+        $('#SearchSceneType')
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: RankType,
+            index: 0,
+
+        });
+        SearchScene();
+    });
+    function SearchScene() {
+        var AcID = GetCookie("Account");;
+        var Type = $("#SearchSceneType").val();
+        var dataSource = new kendo.data.DataSource({
+
+            //data: list,
+            transport: {
+                read: {
+                    url: "/Scene/SceneRead",
+                    dataType: "json", // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                    data: { AcID: AcID, Type: Type }
+                }
+            },
+            batch: true,
+            editable: "incell",
+            pageable: {
+                refresh: true,
+                pageSizes: true
+            },
+            pageSize: 10,
+            schema: {
+                model: {
+                    id: "ID",
+                    fields: {
+                        ID: {
+                            type: 'number', editable: false, defaultValue: function () {
+                                return 0;
+                            }
+                        },
+                        Account_Id: {
+                            type: 'number', editable: false, defaultValue: function () {
+                                return AcID;
+                            }
+                        },
+
+                        Create_Date: { type: 'date' , editable:false},
+                        Scene_Name: {
+                            defaultValue: SceneType[0]
+                        },
+                        Rank_Type: { defaultValue: RankType[0] },
+                        
+                        Note: {
+                            type: 'string',
+                            
+                        },
+                    }
+                }
+            }
+
+
+        });
+        $("#personalSceneGrid").kendoGrid({
+            dataSource: dataSource,
+            editable: "incell",
+            pageable: {
+                refresh: true,
+                pageSizes: true
+            },
+            height: "600px",
+            pageSize: "10",
+            toolbar:
+             kendo.template($("#ScenetbarTemplate").html()),
+            columns: [
+                { field: "Create_Date", width: 100, title: "建立日期", format: "{0:MM/dd/yyyy}" },
+                { width: 100, field: "Scene_Name", editor: SceneTypeDropDownEditor, template: "#=Scene_Name.Name#", title: "景點名稱", },
+                {width: 100, title: "評價星", editor: RankTypeDropDownEditor,template: "#=Rank_Type.Name#",field: "Rank_Type"},
+               
+                {width: 500, title: "附註",field: "Note" },                
+                { command: { text: "刪除", click: SceneDelete }, title: " ", width: "90px" }
+            ]
+        }).data("kendoGrid");
+    }
+    function GetCookie(name) {
+        var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+        if (arr != null) return unescape(arr[2]); return null;
+    }
+    function RankTypeDropDownEditor(container, options) {
+
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.RankType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function SceneTypeDropDownEditor(container, options) {
+
+        var data = JSON.parse('@Html.Raw(new JavaScriptSerializer().Serialize(ViewBag.SceneType))');
+        $('<input required data-bind="value: ' + options.field + '" />')
+        .appendTo(container)
+        .kendoDropDownList({
+            dataTextField: "Name",
+            dataValueField: "ID",
+            dataSource: data,
+            index: 0,
+
+        });
+    }
+    function toolbarCmd() {
+
+        var dataSource = $('#personalSceneGrid').data("kendoGrid").dataSource;//.data();
+        var rows = dataSource.data();
+        dataSource.insert(rows.length, {});
+    }
+    function scenebtnSave() {
+
+        var formData = new FormData();
+        var list = $('#personalSceneGrid').data("kendoGrid").dataSource.data();
+
+        formData.append("SceneList", JSON.stringify(list));
+        $.ajax({
+            url: '@Url.Content("~/Scene/SceneSave")',
+            contentType: false,
+            data: formData,
+            processData: false,
+            type: 'Post',
+            dataType: "Json",
+            success: function (res) {
+                if (res.isSuccess) {
+                    alert("儲存成功!!");
+                    SearchScene();
+                } else {
+                    alert("儲存失敗!!\n錯誤訊息 : \n" + res.Msg);
+                }
+            },
+            complete: function () {
+            }
+        });
+    }
+    function SceneDelete(e) {
+        e.preventDefault();
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        var id = dataItem.ID;
+        var dataSource = $('#personalSceneGrid').data("kendoGrid").dataSource;
+        dataSource.remove(dataItem);
+        
+    }
+</script>
+<table>
+    <tr>
+      @*  <th>姓名:</th>
+        <td>
+        <input id="SearchSceneACName" />
+        </td>*@
+        <th>類型:</th>
+        <td>
+            <input id="SearchSceneType" />
+        </td>
+        <td>
+            <input type="button" value="查詢" class="btn btn-default" onclick="SearchScene()" />
+        </td>
+    </tr>
+</table>
+
+<div id="personalSceneGrid"></div>
